@@ -1,27 +1,39 @@
 # Windows Installation
 
-> Note for Windows Users with WSL/WSL2
-> If you are using Windows Subsystem for Linux (WSL) or WSL2, follow the Linux installation steps as WSL/WSL2 allows you to run a Linux environment directly on Windows.
+This guide provides instructions for installing Golang on Windows.
 
-1. **Install Git:** Go often uses open-source repositories, so it's recommended to install Git first. You can download it from the [Git website](https://git-scm.com/).
+## Steps
 
-2. **Download Go:** Navigate to the [Go installation website](https://go.dev/doc/install) and download the latest Go version for Windows.
+1. **Download Go:**
 
-3. **Run the Installer:** Follow the instructions in the Go installation program.
+   - Navigate to the [Go installation website](https://golang.org/dl/).
+   - Download the latest 64-bit version of Go for Windows.
 
-4. **Verify Installation:** Open Command Prompt and type `go version` to check if Go is installed correctly.
+2. **Install Go:**
 
-5. **Set Up Workspace:**
+   - Run the downloaded MSI file.
+   - Follow the installation prompts.
+   - By default, Go is installed in `Program Files` or `Program Files (x86)`.
 
-   - Go to Control Panel > System and Security > System > Advanced system settings.
-   - Click on Environmental Variables and ensure `C:\Go\bin` is included in the Path under System Variables.
-   - Create a Go workspace in a new folder, separate from where Go installation files are saved, for example, `C:\Projects\Go`.
-   - Inside your Go workspace, set up three new folders: `bin`, `pkg`, `src`.
+3. **Verify Installation:**
 
-6. **Create GOPATH Variable:** In Environmental Variables, under System Variables, click on New. Enter `“GOPATH”` as the Variable Name, and the path to your Go workspace (e.g., `C:\Projects\Go`) as the Variable Value.
+   - Open Command Prompt.
+   - Type `go version` and press Enter.
+   - Ensure the output shows the installed Go version.
 
-7. **Test Installation:** Open Command Prompt and type `go get github.com/golang/example/hello`. Then run `%GOPATH%/bin/hello`. You should see a message like:
+4. **Set Up Workspace:**
 
-```
-"Hello, Go examples!"
-```
+   - Create a new folder for your Go projects (e.g., `C:\GoProjects`).
+   - Inside this folder, create three subfolders: `bin`, `pkg`, `src`.
+
+5. **Configure GOPATH:**
+
+   - Go to Control Panel > System > Advanced system settings > Environmental Variables.
+   - Under System Variables, click New and add `GOPATH` pointing to your Go workspace.
+
+6. **Update System Path:**
+   - Ensure `C:\Go\bin` is included in your system's Path variable.
+
+## Troubleshooting
+
+For installation issues, verify the environment variable settings and restart your system. For more help, visit the [Go installation documentation](https://go.dev/doc/install).
